@@ -1,0 +1,351 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2024 Web Anomaly
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+.wam3-icon-button {
+  display:                     flex;
+  position:                    relative;
+  width:                       48px;
+  height:                      48px;
+  appearance:                  none;
+  background-color:            transparent;
+  border:                      none;
+  box-sizing:                  border-box;
+  outline:                     none;
+  user-select:                 none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:any-link {
+    text-decoration: none;
+  }
+
+  &:enabled {
+    cursor: pointer;
+  }
+}
+
+.wam3-icon-button::before,
+.wam3-icon-button::after {
+  display:       block;
+  position:      absolute;
+  top:           0;
+  right:         0;
+  bottom:        0;
+  left:          0;
+  width:         40px;
+  height:        40px;
+  border-radius: 20px;
+  content:       "";
+  margin:        auto;
+  transition:    background-color var(--wam3-duration--short-3) var(--wam3-easing--emphasized),
+                 outline-color var(--wam3-duration--short-3) var(--wam3-easing--emphasized);
+}
+
+// standard, background
+.wam3-icon-button::before {
+  background-color: transparent;
+}
+
+// standard, state layer
+.wam3-icon-button:any-link:focus-visible::after,
+.wam3-icon-button:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-icon-button:any-link:hover::after,
+.wam3-icon-button:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-icon-button:any-link:active::after,
+.wam3-icon-button:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--press));
+}
+
+// standard, state layer (selected)
+.wam3-icon-button.wam3-icon-button__selected:any-link:focus-visible::after,
+.wam3-icon-button.wam3-icon-button__selected:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-icon-button.wam3-icon-button__selected:any-link:hover::after,
+.wam3-icon-button.wam3-icon-button__selected:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-icon-button.wam3-icon-button__selected:any-link:active::after,
+.wam3-icon-button.wam3-icon-button__selected:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--press));
+}
+
+// standard, icon
+.wam3-icon-button > .wam3-icon {
+  position:  relative;
+  width:     24px;
+  height:    24px;
+  color:     var(--wam3-color--on-surface-variant);
+  font-size: 24px;
+  margin:    auto;
+  overflow:  hidden;
+  z-index:   1;
+}
+
+// standard, icon (disabled)
+.wam3-icon-button:disabled > .wam3-icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// standard, icon (selected)
+.wam3-icon-button.wam3-icon-button__selected > .wam3-icon {
+  color: var(--wam3-color--primary);
+}
+
+// standard, icon (selected, disabled)
+.wam3-icon-button:disabled > .wam3-icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// outlined, background
+.wam3-icon-button.wam3-icon-button__outlined::before {
+  background-color: transparent
+}
+
+// outlined, background (selected)
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected::before {
+  background-color: var(--wam3-color--inverse-surface)
+}
+
+// outlined, background (selected, disabled)
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected:disabled::before {
+  background-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container))
+}
+
+// outlined, state layer
+.wam3-icon-button.wam3-icon-button__outlined::after {
+  outline:        1px solid var(--wam3-color--outline);
+  outline-offset: -1px;
+}
+
+.wam3-icon-button.wam3-icon-button__outlined:any-link:focus-visible::after,
+.wam3-icon-button.wam3-icon-button__outlined:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-icon-button.wam3-icon-button__outlined:any-link:hover::after,
+.wam3-icon-button.wam3-icon-button__outlined:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-icon-button.wam3-icon-button__outlined:any-link:active::after,
+.wam3-icon-button.wam3-icon-button__outlined:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--press));
+}
+
+// outlined, state layer (disabled)
+.wam3-icon-button.wam3-icon-button__outlined::after {
+  outline-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container));
+}
+
+// outlined, state layer (selected)
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected::after {
+  outline-color: transparent;
+}
+
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected:any-link:focus-visible::after,
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--inverse-on-surface) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected:any-link:hover::after,
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--inverse-on-surface) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected:any-link:active::after,
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--inverse-on-surface) r g b / var(--wam3-opacity--press));
+}
+
+// outlined, icon
+.wam3-icon-button.wam3-icon-button__outlined > .wam3-icon {
+  color: var(--wam3-color--on-surface-variant)
+}
+
+// outlined, icon (disabled)
+.wam3-icon-button.wam3-icon-button__outlined:disabled > .wam3-icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content))
+}
+
+// outlined, icon (selected)
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected > .wam3-icon {
+  color: var(--wam3-color--inverse-on-surface)
+}
+
+// outlined, icon (selected, disabled)
+.wam3-icon-button.wam3-icon-button__outlined.wam3-icon-button__selected:disabled > .wam3-icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content))
+}
+
+// filled, background
+.wam3-icon-button.wam3-icon-button__filled::before {
+  background-color: var(--wam3-color--surface-container-highest)
+}
+
+// filled, background (disabled)
+.wam3-icon-button.wam3-icon-button__filled:disabled::before {
+  background-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container))
+}
+
+// filled, background (selected)
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected::before {
+  background-color: var(--wam3-color--primary)
+}
+
+// filled, background (selected, disabled)
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected:disabled::before {
+  background-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container))
+}
+
+// filled, state layer
+.wam3-icon-button.wam3-icon-button__filled:any-link:focus-visible::after,
+.wam3-icon-button.wam3-icon-button__filled:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-icon-button.wam3-icon-button__filled:any-link:hover::after,
+.wam3-icon-button.wam3-icon-button__filled:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-icon-button.wam3-icon-button__filled:any-link:active::after,
+.wam3-icon-button.wam3-icon-button__filled:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--press));
+}
+
+// filled, state layer (selected)
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected:any-link:focus-visible::after,
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--on-primary) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected:any-link:hover::after,
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--on-primary) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected:any-link:active::after,
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--on-primary) r g b / var(--wam3-opacity--press));
+}
+
+// filled, icon
+.wam3-icon-button.wam3-icon-button__filled > .wam3-icon {
+  color: var(--wam3-color--primary)
+}
+
+// filled, icon (disabled)
+.wam3-icon-button.wam3-icon-button__filled:disabled > .wam3-icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content))
+}
+
+// filled, icon (selected)
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected > .wam3-icon {
+  color: var(--wam3-color--on-primary)
+}
+
+// filled, icon (selected, disabled)
+.wam3-icon-button.wam3-icon-button__filled.wam3-icon-button__selected:disabled > .wam3-icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content))
+}
+
+// filled-tonal, background
+.wam3-icon-button.wam3-icon-button__filled-tonal::before {
+  background-color: var(--wam3-color--surface-container-highest)
+}
+
+// filled-tonal, background (disabled)
+.wam3-icon-button.wam3-icon-button__filled-tonal:disabled::before {
+  background-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container))
+}
+
+// filled-tonal, background (selected)
+.wam3-icon-button.wam3-icon-button__filled-tonal.wam3-icon-button__selected::before {
+  background-color: var(--wam3-color--secondary-container)
+}
+
+// filled-tonal, background (selected, disabled)
+.wam3-icon-button.wam3-icon-button__filled-tonal:disabled::before {
+  background-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container))
+}
+
+// filled, state layer
+.wam3-icon-button.wam3-icon-button__filled-tonal:any-link:focus-visible::after,
+.wam3-icon-button.wam3-icon-button__filled-tonal:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-icon-button.wam3-icon-button__filled-tonal:any-link:hover::after,
+.wam3-icon-button.wam3-icon-button__filled-tonal:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-icon-button.wam3-icon-button__filled-tonal:any-link:active::after,
+.wam3-icon-button.wam3-icon-button__filled-tonal:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--on-surface-variant) r g b / var(--wam3-opacity--press));
+}
+
+// filled, state layer (selected)
+.wam3-icon-button.wam3-icon-button__filled-tonal:any-link:focus-visible::after,
+.wam3-icon-button.wam3-icon-button__filled-tonal:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--on-secondary-container) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-icon-button.wam3-icon-button__filled-tonal:any-link:hover::after,
+.wam3-icon-button.wam3-icon-button__filled-tonal:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--on-secondary-container) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-icon-button.wam3-icon-button__filled-tonal:any-link:active::after,
+.wam3-icon-button.wam3-icon-button__filled-tonal:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--on-secondary-container) r g b / var(--wam3-opacity--press));
+}
+
+// filled-tonal, icon
+.wam3-icon-button.wam3-icon-button__filled-tonal > .wam3-icon {
+  color: var(--wam3-color--on-surface-variant)
+}
+
+// filled-tonal, icon (disabled)
+.wam3-icon-button.wam3-icon-button__filled-tonal:disabled > .wam3-icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content))
+}
+
+// filled-tonal, icon (selected)
+.wam3-icon-button.wam3-icon-button__filled-tonal.wam3-icon-button__selected > .wam3-icon {
+  color: var(--wam3-color--on-secondary-container)
+}
+
+// filled-tonal, icon (selected, disabled)
+.wam3-icon-button.wam3-icon-button__filled-tonal.wam3-icon-button__selected:disabled > .wam3-icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content))
+}

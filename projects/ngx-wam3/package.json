@@ -1,0 +1,38 @@
+{
+  "name": "@webanomaly/ngx-wam3",
+  "version": "0.1.4",
+  "description": "Material 3 for Angular",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-anomaly/ngx-wam3.git"
+  },
+  "keywords": [
+    "angular",
+    "material"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^18.2.0",
+    "@angular/core": "^18.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "sass": "./styles/_index.scss"
+    },
+    "./button": {
+      "sass": "./styles/button.scss"
+    },
+    "./icon": {
+      "sass": "./styles/icon.scss"
+    },
+    "./icon-button": {
+      "sass": "./styles/icon-button.scss"
+    },
+    "./typography": {
+      "sass": "./styles/typography.scss"
+    }
+  }
+}

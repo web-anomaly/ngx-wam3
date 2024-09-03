@@ -1,0 +1,170 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2024 Web Anomaly
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+@forward "button";
+@forward "icon";
+@forward "icon-button";
+@forward "typography";
+
+.wam3 {
+  --wam3-color--primary-fixed:              #8ff3f4;
+  --wam3-color--primary-fixed-dim:          #37dbde;
+  --wam3-color--on-primary-fixed:           #002020;
+  --wam3-color--on-primary-fixed-variant:   #004f51;
+
+  --wam3-color--secondary-fixed:            #cae8e8;
+  --wam3-color--secondary-fixed-dim:        #afcccc;
+  --wam3-color--on-secondary-fixed:         #022020;
+  --wam3-color--on-secondary-fixed-variant: #304b4c;
+
+  --wam3-color--tertiary-fixed:             #d4e3ff;
+  --wam3-color--tertiary-fixed-dim:         #b2c8eb;
+  --wam3-color--on-tertiary-fixed:          #031c37;
+  --wam3-color--on-tertiary-fixed-variant:  #334865;
+
+  --wam3-color--scrim:                      #293232;
+
+  --wam3-shape--extra-large:                28px;
+  --wam3-shape--large:                      16px;
+  --wam3-shape--medium:                     12px;
+  --wam3-shape--small:                      8px;
+  --wam3-shape--extra-small:                4px;
+
+  --wam3-opacity--hover:                    8%;
+  --wam3-opacity--focus:                    10%;
+  --wam3-opacity--press:                    10%;
+  --wam3-opacity--drag:                     16%;
+  --wam3-opacity--disabled-container:       12%;
+  --wam3-opacity--disabled-content:         38%;
+
+  --wam3-easing--emphasized:                cubic-bezier(0.2, 0.0, 0.0, 1.0);
+  --wam3-easing--emphasized-accelerate:     cubic-bezier(0.3, 0.0, 0.8, 0.15);
+  --wam3-easing--emphasized-decelerate:     cubic-bezier(0.05, 0.7, 0.1, 1.0);
+
+  --wam3-duration--short-1:                 50ms;
+  --wam3-duration--short-2:                 100ms;
+  --wam3-duration--short-3:                 150ms;
+  --wam3-duration--short-4:                 200ms;
+
+  --wam3-duration--medium-1:                250ms;
+  --wam3-duration--medium-2:                300ms;
+  --wam3-duration--medium-3:                350ms;
+  --wam3-duration--medium-4:                400ms;
+
+  --wam3-duration--long-1:                  450ms;
+  --wam3-duration--long-2:                  500ms;
+  --wam3-duration--long-3:                  550ms;
+  --wam3-duration--long-4:                  600ms;
+
+  --wam3-duration--extra-long-1:            700ms;
+  --wam3-duration--extra-long-2:            800ms;
+  --wam3-duration--extra-long-3:            900ms;
+  --wam3-duration--extra-long-4:            1000ms;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .wam3 {
+    --wam3-color--primary:                   #00696b;
+    --wam3-color--on-primary:                #ffffff;
+    --wam3-color--primary-container:         #8ff3f4;
+    --wam3-color--on-primary-container:      #002020;
+
+    --wam3-color--secondary:                 #486364;
+    --wam3-color--on-secondary:              #ffffff;
+    --wam3-color--secondary-container:       #cae8e8;
+    --wam3-color--on-secondary-container:    #022020;
+
+    --wam3-color--tertiary:                  #4a5f7e;
+    --wam3-color--on-tertiary:               #ffffff;
+    --wam3-color--tertiary-container:        #d4e3ff;
+    --wam3-color--on-tertiary-container:     #031c37;
+
+    --wam3-color--surface-dim:               #d5dbdb;
+    --wam3-color--surface:                   #f7faf9;
+    --wam3-color--surface-bright:            #f7faf9;
+
+    --wam3-color--surface-container-lowest:  #ffffff;
+    --wam3-color--surface-container-low:     #eff5f4;
+    --wam3-color--surface-container:         #e9efee;
+    --wam3-color--surface-container-high:    #e3e9e9;
+    --wam3-color--surface-container-highest: #e0e3e2;
+
+    --wam3-color--on-surface:                #191c1c;
+    --wam3-color--on-surface-variant:        #444747;
+    --wam3-color--outline:                   #6f7979;
+    --wam3-color--outline-variant:           #bec8c8;
+
+    --wam3-color--error:                     #ba1a1a;
+    --wam3-color--on-error:                  #ffffff;
+    --wam3-color--error-container:           #ffdad6;
+    --wam3-color--on-error-container:        #410002;
+
+    --wam3-color--inverse-surface:           #2d3131;
+    --wam3-color--inverse-on-surface:        #eff1f0;
+    --wam3-color--inverse-primary:           #37dbde;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .wam3 {
+    --wam3-color--primary:                   #37dbde;
+    --wam3-color--on-primary:                #003738;
+    --wam3-color--primary-container:         #004f51;
+    --wam3-color--on-primary-container:      #8ff3f4;
+
+    --wam3-color--secondary:                 #afcccc;
+    --wam3-color--on-secondary:              #193535;
+    --wam3-color--secondary-container:       #304b4c;
+    --wam3-color--on-secondary-container:    #cae8e8;
+
+    --wam3-color--tertiary:                  #b2c8eb;
+    --wam3-color--on-tertiary:               #1b314e;
+    --wam3-color--tertiary-container:        #334865;
+    --wam3-color--on-tertiary-container:     #d4e3ff;
+
+    --wam3-color--surface-dim:               #0e1415;
+    --wam3-color--surface:                   #0e1415;
+    --wam3-color--surface-bright:            #343a3a;
+
+    --wam3-color--surface-container-lowest:  #090f0f;
+    --wam3-color--surface-container-low:     #161d1d;
+    --wam3-color--surface-container:         #1a2121;
+    --wam3-color--surface-container-high:    #252b2b;
+    --wam3-color--surface-container-highest: #2f3636;
+
+    --wam3-color--on-surface:                #e0e3e2;
+    --wam3-color--on-surface-variant:        #bec8c8;
+    --wam3-color--outline:                   #899392;
+    --wam3-color--outline-variant:           #3f4949;
+
+    --wam3-color--error:                     #ffb4ab;
+    --wam3-color--on-error:                  #690005;
+    --wam3-color--error-container:           #93000a;
+    --wam3-color--on-error-container:        #ffdad6;
+
+    --wam3-color--inverse-surface:           #e0e3e2;
+    --wam3-color--inverse-on-surface:        #2d3131;
+    --wam3-color--inverse-primary:           #00696b;
+  }
+}

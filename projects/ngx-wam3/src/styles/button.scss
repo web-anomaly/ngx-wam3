@@ -1,0 +1,315 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2024 Web Anomaly
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+.wam3-button {
+  display:                     flex;
+  position:                    relative;
+  width:                       fit-content;
+  height:                      48px;
+  min-width:                   48px;
+  align-items:                 center;
+  appearance:                  none;
+  background-color:            transparent;
+  border:                      none;
+  box-sizing:                  border-box;
+  outline:                     none;
+  padding:                     0;
+  user-select:                 none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:any-link {
+    text-decoration: none;
+  }
+
+  &:enabled {
+    cursor: pointer;
+  }
+}
+
+.wam3-button::before,
+.wam3-button::after {
+  display:       block;
+  position:      absolute;
+  top:           0;
+  right:         0;
+  bottom:        0;
+  left:          0;
+  height:        40px;
+  border-radius: 20px;
+  content:       "";
+  margin-block:  auto;
+  transition:    background-color var(--wam3-duration--short-3) var(--wam3-easing--emphasized),
+                 outline-color var(--wam3-duration--short-3) var(--wam3-easing--emphasized);
+}
+
+// filled, background
+.wam3-button::before {
+  background-color: var(--wam3-color--primary);
+}
+
+// filled, background (disabled)
+.wam3-button:disabled::before {
+  background-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container));
+}
+
+// filled, state layer
+.wam3-button:any-link:focus-visible::after,
+.wam3-button:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--on-primary) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-button:any-link:hover::after,
+.wam3-button:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--on-primary) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-button:any-link:active::after,
+.wam3-button:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--on-primary) r g b / var(--wam3-opacity--press));
+}
+
+// filled, label
+.wam3-button > .wam3-button--label {
+  position:                relative;
+  box-sizing:              content-box;
+  color:                   var(--wam3-color--on-primary);
+  flex:                    1;
+  text-align:              center;
+  transition:              color var(--wam3-duration--short-3) var(--wam3-easing--emphasized),
+                           padding var(--wam3-duration--short-3) var(--wam3-easing--emphasized);
+  white-space:             nowrap;
+  z-index:                 1;
+  padding-inline:          8px;
+  // font
+  font-family:             "Roboto Flex", sans-serif;
+  font-optical-sizing:     auto;
+  font-style:              normal;
+  font-variation-settings: "slnt" 0, "wdth" 100, "GRAD" 0,
+                           "XOPQ" 96, "XTRA" 468, "YOPQ" 79,
+                           "YTAS" 750, "YTDE" -203, "YTFI" 738,
+                           "YTLC" 514, "YTUC" 712;
+  font-weight:             700;
+  font-size:               0.875rem;
+  letter-spacing:          0.00625rem;
+  line-height:             1.25rem;
+
+  &:first-child {
+    padding-inline-start: 24px;
+  }
+
+  &:last-child {
+    padding-inline-end: 24px;
+  }
+}
+
+// filled, label (disabled)
+.wam3-button:disabled > .wam3-button--label {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// filled, icon
+.wam3-button > .wam3-button--icon {
+  position:   relative;
+  width:      18px;
+  height:     18px;
+  min-width:  18px;
+  min-height: 18px;
+  box-sizing: content-box;
+  color:      var(--wam3-color--on-primary);
+  transition: color var(--wam3-duration--short-3) var(--wam3-easing--emphasized),
+              padding var(--wam3-duration--short-3) var(--wam3-easing--emphasized);
+  z-index:    1;
+
+  &:first-child {
+    padding-inline-start: 16px;
+  }
+
+  &:last-child {
+    padding-inline-end: 16px;
+  }
+
+  & > .wam3-icon {
+    font-size:   18px;
+    font-weight: 600;
+  }
+}
+
+// filled, icon (disabled)
+.wam3-button:disabled > .wam3-button--icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// filled-tonal, background
+.wam3-button.wam3-button__filled-tonal::before {
+  background-color: var(--wam3-color--secondary-container);
+}
+
+// filled-tonal, background (disabled)
+.wam3-button.wam3-button__filled-tonal:disabled::before {
+  background-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container));
+}
+
+// filled-tonal, state layer
+.wam3-button.wam3-button__filled-tonal:any-link:focus-visible::after,
+.wam3-button.wam3-button__filled-tonal:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--on-secondary-container) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-button.wam3-button__filled-tonal:any-link:hover::after,
+.wam3-button.wam3-button__filled-tonal:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--on-secondary-container) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-button.wam3-button__filled-tonal:any-link:active::after,
+.wam3-button.wam3-button__filled-tonal:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--on-secondary-container) r g b / var(--wam3-opacity--press));
+}
+
+// filled-tonal, label
+.wam3-button.wam3-button__filled-tonal > .wam3-button--label {
+  color: var(--wam3-color--on-secondary-container);
+}
+
+// filled-tonal, label (disabled)
+.wam3-button.wam3-button__filled-tonal:disabled > .wam3-button--label {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// filled-tonal, icon
+.wam3-button.wam3-button__filled-tonal > .wam3-button--icon {
+  color: var(--wam3-color--on-secondary-container);
+}
+
+// filled-tonal, icon (disabled)
+.wam3-button.wam3-button__filled-tonal:disabled > .wam3-button--icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// outlined, background
+.wam3-button.wam3-button__outlined::before {
+  background-color: transparent;
+}
+
+// outlined, state layer
+.wam3-button.wam3-button__outlined::after {
+  outline:        1px solid var(--wam3-color--outline);
+  outline-offset: -1px;
+}
+
+.wam3-button.wam3-button__outlined:any-link:focus-visible::after,
+.wam3-button.wam3-button__outlined:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-button.wam3-button__outlined:any-link:hover::after,
+.wam3-button.wam3-button__outlined:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-button.wam3-button__outlined:any-link:active::after,
+.wam3-button.wam3-button__outlined:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--press));
+}
+
+// outlined, state layer (disabled)
+.wam3-button.wam3-button__outlined::after {
+  outline-color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-container));
+}
+
+// outlined, label
+.wam3-button.wam3-button__outlined > .wam3-button--label {
+  color: var(--wam3-color--primary);
+}
+
+// outlined, label (disabled)
+.wam3-button.wam3-button__outlined:disabled > .wam3-button--label {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// outlined, icon
+.wam3-button.wam3-button__outlined > .wam3-button--icon {
+  color: var(--wam3-color--primary);
+}
+
+// outlined, icon (disabled)
+.wam3-button.wam3-button__outlined:disabled > .wam3-button--icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// text, background
+.wam3-button.wam3-button__text::before {
+  background-color: transparent;
+}
+
+// text, state layer
+.wam3-button.wam3-button__text:any-link:focus-visible::after,
+.wam3-button.wam3-button__text:enabled:focus-visible::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--focus));
+}
+
+.wam3-button.wam3-button__text:any-link:hover::after,
+.wam3-button.wam3-button__text:enabled:hover::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--hover));
+}
+
+.wam3-button.wam3-button__text:any-link:active::after,
+.wam3-button.wam3-button__text:enabled:active::after {
+  background-color: rgb(from var(--wam3-color--primary) r g b / var(--wam3-opacity--press));
+}
+
+// text, label
+.wam3-button.wam3-button__text > .wam3-button--label {
+  color: var(--wam3-color--primary);
+
+  &:first-child {
+    padding-inline-start: 12px;
+  }
+
+  &:last-child {
+    padding-inline-end: 12px;
+  }
+}
+
+// text, label (disabled)
+.wam3-button.wam3-button__text:disabled > .wam3-button--label {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}
+
+// text, icon
+.wam3-button.wam3-button__text > .wam3-button--icon {
+  color: var(--wam3-color--primary);
+
+  &:first-child {
+    padding-inline-start: 12px;
+  }
+
+  &:last-child {
+    padding-inline-end: 12px;
+  }
+}
+
+// text, icon (disabled)
+.wam3-button.wam3-button__text:disabled > .wam3-button--icon {
+  color: rgb(from var(--wam3-color--on-surface) r g b / var(--wam3-opacity--disabled-content));
+}

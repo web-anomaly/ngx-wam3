@@ -1,0 +1,149 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2024 Web Anomaly
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+@mixin base {
+  font-family:             "Roboto Flex", sans-serif;
+  font-optical-sizing:     auto;
+  font-style:              normal;
+  font-variation-settings: "slnt" 0, "wdth" 100, "GRAD" 0, "XOPQ" 96, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+}
+
+.wam3-typo--display-large {
+  @include base;
+  font-weight:    400;
+  font-size:      3.5625rem;
+  letter-spacing: -0.015625rem;
+  line-height:    4rem;
+}
+
+.wam3-typo--display-medium {
+  @include base;
+  font-weight:    400;
+  font-size:      2.8125rem;
+  letter-spacing: 0;
+  line-height:    3.25rem;
+}
+
+.wam3-typo--display-small {
+  @include base;
+  font-weight:    400;
+  font-size:      2.25rem;
+  letter-spacing: 0;
+  line-height:    2.75rem;
+}
+
+.wam3-typo--headline-large {
+  @include base;
+  font-weight:    400;
+  font-size:      2rem;
+  letter-spacing: 0;
+  line-height:    2.5rem;
+}
+
+.wam3-typo--headline-medium {
+  @include base;
+  font-weight:    400;
+  font-size:      1.75rem;
+  letter-spacing: 0;
+  line-height:    2.25rem;
+}
+
+.wam3-typo--headline-small {
+  @include base;
+  font-weight:    400;
+  font-size:      1.5rem;
+  letter-spacing: 0;
+  line-height:    2rem;
+}
+
+.wam3-typo--title-large {
+  @include base;
+  font-weight:    400;
+  font-size:      1.375rem;
+  letter-spacing: 0;
+  line-height:    1.75rem;
+}
+
+.wam3-typo--title-medium {
+  @include base;
+  font-weight:    500;
+  font-size:      1rem;
+  letter-spacing: 0.009375rem;
+  line-height:    1.5rem;
+}
+
+.wam3-typo--title-small {
+  @include base;
+  font-weight:    500;
+  font-size:      0.875rem;
+  letter-spacing: 0.00625rem;
+  line-height:    1.25rem;
+}
+
+.wam3-typo--body-large {
+  @include base;
+  font-weight:    400;
+  font-size:      1rem;
+  letter-spacing: 0.03125rem;
+  line-height:    1.5rem;
+}
+
+.wam3-typo--body-medium {
+  @include base;
+  font-weight:    400;
+  font-size:      0.875rem;
+  letter-spacing: 0.015625rem;
+  line-height:    1.25rem;
+}
+
+.wam3-typo--body-small {
+  @include base;
+  font-weight:    400;
+  font-size:      0.75rem;
+  letter-spacing: 0.025rem;
+  line-height:    1rem;
+}
+
+.wam3-typo--label-large {
+  @include base;
+  font-weight:    700;
+  font-size:      0.875rem;
+  letter-spacing: 0.00625rem;
+  line-height:    1.25rem;
+}
+
+.wam3-typo--label-medium {
+  @include base;
+  font-weight:    700;
+  font-size:      0.75rem;
+  letter-spacing: 0.03125rem;
+  line-height:    1rem;
+}
+
+.wam3-typo--label-small {
+  @include base;
+  font-weight:    700;
+  font-size:      0.6875rem;
+  letter-spacing: 0.03125rem;
+  line-height:    1rem;
+}

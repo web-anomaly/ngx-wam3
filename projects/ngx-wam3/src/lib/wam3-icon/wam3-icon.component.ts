@@ -22,17 +22,21 @@
  * SOFTWARE.
  */
 
-import {Component, computed, input} from "@angular/core";
+import {Component, computed, input, ViewEncapsulation} from "@angular/core";
 
 @Component({
   selector: "i[wam3-icon]",
   standalone: true,
   imports: [],
   templateUrl: "./wam3-icon.component.html",
-  styleUrl: "./wam3-icon.component.sass",
+  styleUrls: [
+    "./wam3-icon.component.sass",
+    "../../styles/icon.scss",
+  ],
   host: {
     "[class]": "elementClasses()",
   },
+  encapsulation: ViewEncapsulation.None,
 })
 export class Wam3IconComponent {
   public readonly fill = input(false);

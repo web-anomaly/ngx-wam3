@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import {Component, computed, input} from "@angular/core";
+import {Component, computed, input, ViewEncapsulation} from "@angular/core";
 
 export type Wam3IconButtonVariant = "standard" | "filled" | "filled-tonal" | "outlined";
 
@@ -97,10 +97,14 @@ export type Wam3IconButtonVariant = "standard" | "filled" | "filled-tonal" | "ou
   standalone: true,
   imports: [],
   templateUrl: "./wam3-icon-button.component.html",
-  styleUrl: "./wam3-icon-button.component.sass",
+  styleUrls: [
+    "./wam3-icon-button.component.sass",
+    "../../styles/icon-button.scss",
+  ],
   host: {
     "[class]": "elementClasses()",
   },
+  encapsulation: ViewEncapsulation.None,
 })
 export class Wam3IconButtonComponent {
   public readonly variant = input<Wam3IconButtonVariant>("standard");

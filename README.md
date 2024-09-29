@@ -14,10 +14,27 @@ ng add @webanomaly/ngx-wam3
 npm install @webanomaly/ngx-wam3
 ```
 
-## Get started
+## Configuring styles
 
-### Import styles
+Add the following into your application styles.
 
 ```scss
-@use "@webanomaly/ngx-m3";
+
+@use "@webanomaly/ngx-wam3" as wam3;
+
+body {
+  @include wam3.core;
+}
+
+@media only screen and (prefers-color-scheme: light) {
+  body {
+    @include wam3.theme-light;
+  }
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  body {
+    @include wam3.theme-night;
+  }
+}
 ```

@@ -117,7 +117,6 @@ export type Wam3ButtonVariant = "filled" | "filled-tonal" | "outlined" | "text";
  */
 @Component({
   selector: "a[wam3-button], button[wam3-button]",
-  standalone: true,
   imports: [],
   templateUrl: "./wam3-button.component.html",
   styleUrls: [

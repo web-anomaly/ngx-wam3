@@ -94,7 +94,6 @@ export type Wam3IconButtonVariant = "standard" | "filled" | "filled-tonal" | "ou
  */
 @Component({
   selector: "a[wam3-icon-button], button[wam3-icon-button]",
-  standalone: true,
   imports: [],
   templateUrl: "./wam3-icon-button.component.html",
   styleUrls: [
@@ -104,7 +103,7 @@ export type Wam3IconButtonVariant = "standard" | "filled" | "filled-tonal" | "ou
   host: {
     "[class]": "elementClasses()",
   },
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class Wam3IconButtonComponent {
   public readonly variant = input<Wam3IconButtonVariant>("standard");

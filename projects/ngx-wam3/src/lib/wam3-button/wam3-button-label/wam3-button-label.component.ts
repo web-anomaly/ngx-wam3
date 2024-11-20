@@ -26,13 +26,12 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: "span[wam3-button-label]",
-  standalone: true,
   imports: [],
   templateUrl: "./wam3-button-label.component.html",
   styleUrl: "./wam3-button-label.component.css",
   host: {
     "class": "wam3-button--label",
-  },
+  }
 })
 export class Wam3ButtonLabelComponent {
 }

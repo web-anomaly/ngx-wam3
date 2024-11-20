@@ -26,7 +26,6 @@ import {Component, computed, input, ViewEncapsulation} from "@angular/core";
 
 @Component({
   selector: "i[wam3-icon]",
-  standalone: true,
   imports: [],
   templateUrl: "./wam3-icon.component.html",
   styleUrls: [
@@ -36,7 +35,7 @@ import {Component, computed, input, ViewEncapsulation} from "@angular/core";
   host: {
     "[class]": "elementClasses()",
   },
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class Wam3IconComponent {
   public readonly fill = input(false);

@@ -26,13 +26,12 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: "span[wam3-button-trailing]",
-  standalone: true,
   imports: [],
   templateUrl: "./wam3-button-trailing.component.html",
   styleUrl: "./wam3-button-trailing.component.css",
   host: {
     "class": "wam3-button--icon",
-  },
+  }
 })
 export class Wam3ButtonTrailingComponent {
 }
